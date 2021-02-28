@@ -1,9 +1,8 @@
 package l1;
 
-import l1.About;
 
 @Info(name = "Simple form")
-class ComplexNumber {
+class ComplexNumber implements ComplexInterface {
     private double real;
     private double imaginary;
 
@@ -12,18 +11,27 @@ class ComplexNumber {
         imaginary = b;
     }
 
+    @Override
     @About(name="Method, which gets complex number")
-    String getNumber() {
+    public String toString() {
         return (real!=0)? real + " + " + imaginary + "i": imaginary + "i";
     }
 
+    @Override
     @About(name="Method, which gets real part of complex number")
-    String getReal() {
+    public String getReal() {
         return ""+real;
     }
 
+    @Override
     @About(name="Method, which gets imaginary part of complex number")
-    String getImaginary() {
-        return ""+imaginary;
+    public String getImaginary() { return ""+imaginary; }
+
+    @Override
+    public void setReal(int r) {
+        real = r;
     }
+
+    @Override
+    public void setImaginary(int i) { imaginary = i; }
 }

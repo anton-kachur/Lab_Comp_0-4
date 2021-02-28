@@ -11,13 +11,13 @@ public class ComplexProxy implements InvocationHandler{
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        if (method.getName().startsWith("Method")) {
+        if (method.getName().startsWith("get")) {
             return method.invoke(n, args);
         }
-        throw new IllegalAccessException("Not allowed");
+        return null;
     }
 
-    public static Object newProxyInstance(Object obj) {
+    static Object newProxyInstance(Object obj) {
         return java.lang.reflect.Proxy.newProxyInstance(
                 obj.getClass().getClassLoader(),
                 obj.getClass().getInterfaces(),

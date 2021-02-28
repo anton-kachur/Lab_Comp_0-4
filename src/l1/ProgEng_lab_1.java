@@ -17,19 +17,26 @@ public class ProgEng_lab_1 {
         ComplexNumberExponential n2 = new ComplexNumberExponential(1, 2);
 
         Class clazz = ComplexNumberExponential.class;
+        Method[] methods = clazz.getMethods();
+        System.out.println("Class: " + clazz.getName() + ";\nSuperclass: " + clazz.getSuperclass().getName()+";\n");
 
-        System.out.println("Class: " + clazz.getName() + "; Superclass: " + clazz.getSuperclass().getName());
-
-        for (Method method : clazz.getDeclaredMethods()) {
+        System.out.println("Class name: " + clazz.getSimpleName());
+        for (Method method : methods) {
             if (method.isAnnotationPresent(About.class)) {
                 System.out.println("Method: " + method.getAnnotation(About.class).name() + " -> " + method.invoke(n2));
+                Class<?>[] params = method.getParameterTypes();
+                System.out.print("Parameters: ");
+                for (Class<?> paramType : params) {
+                    System.out.print(" " + paramType.getName() + "\n");
+                }
+                System.out.print("\n");
             }
         }
 
-        Getter proxy = (Getter) ComplexProxy.newProxyInstance(n2);
-        System.out.println(proxy.getReal());
-        proxy.setReal(1);
-
+        ComplexInterface proxy = (ComplexInterface) ComplexProxy.newProxyInstance(n1);
+        System.out.println("Setting real part...");
+        proxy.setReal(12);
+        System.out.println("GetReal method: "+ proxy.getReal());
     }
 }
 
