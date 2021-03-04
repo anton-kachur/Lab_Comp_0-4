@@ -6,12 +6,13 @@ import l1.ComplexNumber;
 import java.lang.Math;
 
 @Info(name = "Exponential form")
+public
 class ComplexNumberExponential extends ComplexNumber {
     private double real;
     private double imaginary;
 
 
-    ComplexNumberExponential(double a, double b){
+    public ComplexNumberExponential(double a, double b){
         super(a, b);
         real = a;
         imaginary = b;

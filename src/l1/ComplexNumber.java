@@ -2,11 +2,12 @@ package l1;
 
 
 @Info(name = "Simple form")
+public
 class ComplexNumber implements ComplexInterface {
     private double real;
     private double imaginary;
 
-    ComplexNumber(double a, double b){
+    public ComplexNumber(double a, double b){
         real = a;
         imaginary = b;
     }
@@ -25,13 +26,32 @@ class ComplexNumber implements ComplexInterface {
 
     @Override
     @About(name="Method, which gets imaginary part of complex number")
-    public String getImaginary() { return ""+imaginary; }
+    public String getImaginary() { return ""+imaginary+"i"; }
 
     @Override
-    public void setReal(int r) {
+    public double setReal(int r) {
         real = r;
+        return real;
     }
 
     @Override
-    public void setImaginary(int i) { imaginary = i; }
+    public double setImaginary(int i) {
+        imaginary = i;
+        return imaginary;
+    }
+
+    @Override
+    public ComplexNumber sumNumbers(ComplexNumber num) {
+        return new ComplexNumber(this.real + num.real, this.imaginary + num.imaginary);
+    }
+
+    @Override
+    public ComplexNumber minusNumbers(ComplexNumber num) {
+        return new ComplexNumber(this.real - num.real, this.imaginary - num.imaginary);
+    }
+
+    @Override
+    public ComplexNumber timesNumbers(ComplexNumber num) {
+        return new ComplexNumber(this.real + num.real - this.imaginary + num.imaginary, this.real + num.imaginary - this.imaginary + num.real);
+    }
 }

@@ -14,10 +14,10 @@ public class ComplexProxy implements InvocationHandler{
         if (method.getName().startsWith("get")) {
             return method.invoke(n, args);
         }
-        return null;
+        throw new IllegalAccessException("Exception thrown!");
     }
 
-    static Object newProxyInstance(Object obj) {
+    public static Object newProxyInstance(Object obj) {
         return java.lang.reflect.Proxy.newProxyInstance(
                 obj.getClass().getClassLoader(),
                 obj.getClass().getInterfaces(),
