@@ -1,6 +1,6 @@
 package tests;
 
-import l1.ComplexNumberExponential;
+import l1.ComplexNumberExponential.ComplexNumberExponential;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 

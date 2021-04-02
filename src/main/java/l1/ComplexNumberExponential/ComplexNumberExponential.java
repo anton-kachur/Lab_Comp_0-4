@@ -1,7 +1,8 @@
-package l1;
+package l1.ComplexNumberExponential;
 
 import l1.About;
-import l1.ComplexNumber;
+import l1.ComplexNumber.ComplexNumber;
+import l1.Info;
 
 import java.lang.Math;
 

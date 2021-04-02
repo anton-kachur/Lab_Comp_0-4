@@ -1,9 +1,8 @@
 package tests;
 
 import l1.ComplexInterface;
-import l1.ComplexNumber;
-import l1.ComplexNumberExponential;
-import l1.ComplexProxy;
+import l1.ComplexNumber.ComplexNumber;
+import l1.ComplexProxy.ComplexProxy;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;

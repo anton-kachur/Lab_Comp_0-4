@@ -1,6 +1,6 @@
 package tests;
 
-import l1.ComplexNumber;
+import l1.ComplexNumber.ComplexNumber;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;

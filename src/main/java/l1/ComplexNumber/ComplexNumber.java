@@ -1,5 +1,9 @@
-package l1;
+package l1.ComplexNumber;
 
+
+import l1.About;
+import l1.ComplexInterface;
+import l1.Info;
 
 @Info(name = "Simple form")
 public
@@ -42,7 +46,9 @@ class ComplexNumber implements ComplexInterface {
 
     @Override
     public ComplexNumber sumNumbers(ComplexNumber num) {
-        return new ComplexNumber(this.real + num.real, this.imaginary + num.imaginary);
+        ComplexNumber n = new ComplexNumber(Double.parseDouble(this.getReal()) + Double.parseDouble(num.getReal()), Double.parseDouble(this.getImaginary().replaceFirst(".$","")) + Double.parseDouble(num.getImaginary().replaceFirst(".$","")));
+        System.out.println("AAAAAA: " + n.getReal());
+        return new ComplexNumber(Double.parseDouble(this.getReal()) + Double.parseDouble(num.getReal()), Double.parseDouble(this.getImaginary().replaceFirst(".$","")) + Double.parseDouble(num.getImaginary().replaceFirst(".$","")));
     }
 
     @Override
