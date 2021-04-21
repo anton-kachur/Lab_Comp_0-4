@@ -22,7 +22,7 @@ public class MainController {
     ComplexNumber n1 = new ComplexNumber(1, 2);
     ComplexNumberExponential n2 = new ComplexNumberExponential(1, 2);
 
-    MainController(int choice) {
+    public MainController(int choice) {
         switch(choice) {
             case 1: System.out.println("\nCommand pattern"); startCommand(); break;
             case 2: System.out.println("\nDecorator pattern"); startDecorator(); break;
